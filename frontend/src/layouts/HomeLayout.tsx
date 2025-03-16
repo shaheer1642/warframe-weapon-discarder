@@ -21,7 +21,7 @@ const Footer = styled('footer')(({ theme }) => ({
     }
 }));
 
-const Header = styled(AppBar)(({ theme }) => ({
+const Header = styled(AppBar)(() => ({
     backgroundColor: 'rgba(30, 30, 35, 0.95)',
     backdropFilter: 'blur(10px)',
     borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
