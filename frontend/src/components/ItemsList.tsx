@@ -2,8 +2,6 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Grid2, Typography, TextField, InputAdornment, Tooltip, IconButton } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import InfoIcon from '@mui/icons-material/Info';
-import DeleteIcon from '@mui/icons-material/Delete';
-import BuildIcon from '@mui/icons-material/Build';
 import VirtualizedGrid from './VirtualizedGrid';
 import InfoPanel from './InfoPanel';
 import itemsController from '../api/controllers/items.controller';

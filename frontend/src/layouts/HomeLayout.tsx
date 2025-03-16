@@ -21,7 +21,7 @@ const Footer = styled('footer')(({ theme }) => ({
     }
 }));
 
-const Header = styled(AppBar)(({ theme }) => ({
+const Header = styled(AppBar)(() => ({
     backgroundColor: 'rgba(30, 30, 35, 0.95)',
     backdropFilter: 'blur(10px)',
     borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
@@ -66,7 +66,7 @@ export default function HomeLayout({ children }: HomeLayoutProps) {
                 <Box sx={{ display: 'flex', gap: 2, alignItems: 'center' }}>
                     <Typography variant="body2" color="text.secondary">
                         Contact:
-                        <Link href="https://discord.com/users/your_discord_id" target="_blank" sx={{ ml: 1 }}>
+                        <Link href="https://discord.com/users/253525146923433984" target="_blank" sx={{ ml: 1 }}>
                             @mrsofty (Discord)
                         </Link>
                         {' | '}

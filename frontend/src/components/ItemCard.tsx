@@ -15,7 +15,7 @@ import LockIcon from '@mui/icons-material/Lock';
 import { WarframeWeapon } from "../types/weapon.types";
 import { styled } from "@mui/material/styles";
 
-const StyledCard = styled(Card)(({ theme }) => ({
+const StyledCard = styled(Card)(() => ({
     width: '100%',
     height: '100%',
     display: 'flex',
