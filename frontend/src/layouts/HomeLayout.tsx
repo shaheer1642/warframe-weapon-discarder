@@ -66,7 +66,7 @@ export default function HomeLayout({ children }: HomeLayoutProps) {
                 <Box sx={{ display: 'flex', gap: 2, alignItems: 'center' }}>
                     <Typography variant="body2" color="text.secondary">
                         Contact:
-                        <Link href="https://discord.com/users/your_discord_id" target="_blank" sx={{ ml: 1 }}>
+                        <Link href="https://discord.com/users/253525146923433984" target="_blank" sx={{ ml: 1 }}>
                             @mrsofty (Discord)
                         </Link>
                         {' | '}

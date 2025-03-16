@@ -10,10 +10,10 @@ interface SEOProps {
 
 const SEO = ({
     title = 'Warframe Weapons Discarder',
-    description = 'A tool to help Warframe players identify which weapons can be safely discarded and which ones are needed for crafting other weapons.',
+    description = 'A tool to help Warframe players identify which weaponis can be safely discarded and which ones are needed for crafting other weapons.',
     keywords = ['warframe', 'weapons', 'discard', 'crafting', 'guide', 'tool'],
     image = '/og-image.png', // You'll need to add this image to your public folder
-    url = 'https://your-domain.com', // Replace with your actual domain
+    url = 'https://warframe-weapon-discarder.astrosync.net', // Replace with your actual domain
 }: SEOProps) => {
     const formattedTitle = `${title} | Warframe Tool`;
 
