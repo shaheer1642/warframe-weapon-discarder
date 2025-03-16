@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="630" fill="#1e1e23"/>
+    <g transform="translate(100, 100)">
+        <text x="0" y="0" font-family="Arial, sans-serif" font-size="64" font-weight="bold" fill="#1976d2">
+            Warframe Weapons Discarder
+        </text>
+        <text x="0" y="100" font-family="Arial, sans-serif" font-size="32" fill="#ffffff">
+            Easily identify which weapons to keep or discard
+        </text>
+        <g transform="translate(0, 200)">
+            <rect width="400" height="60" rx="8" fill="#2e7d32" opacity="0.8"/>
+            <text x="200" y="38" font-family="Arial, sans-serif" font-size="24" fill="#ffffff" text-anchor="middle">
+                Safe to Discard
+            </text>
+        </g>
+        <g transform="translate(500, 200)">
+            <rect width="400" height="60" rx="8" fill="#d32f2f" opacity="0.8"/>
+            <text x="200" y="38" font-family="Arial, sans-serif" font-size="24" fill="#ffffff" text-anchor="middle">
+                Required for Crafting
+            </text>
+        </g>
+    </g>
+</svg> 

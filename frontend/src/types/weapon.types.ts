@@ -68,52 +68,27 @@ export interface PatchLog {
 }
 
 export interface WarframeWeapon {
-    accuracy: number;
-    attacks: Attack[];
-    buildPrice: number;
-    buildQuantity: number;
-    buildTime: number;
-    category: string;
-    components: Component[];
-    consumeOnBuild: boolean;
-    criticalChance: number;
-    criticalMultiplier: number;
-    damage: DamageDistribution;
-    damagePerShot: number[];
-    description: string;
-    disposition: number;
-    fireRate: number;
-    imageName: string;
-    introduced: {
-        name: string;
-        url: string;
-        aliases: string[];
-        parent: string;
-        date: string;
-    };
-    isPrime: boolean;
-    magazineSize: number;
-    marketCost: number;
-    masterable: boolean;
-    masteryReq: number;
-    multishot: number;
     name: string;
-    noise: string;
-    omegaAttenuation: number;
-    patchlogs: PatchLog[];
-    polarities: string[];
-    procChance: number;
-    productCategory: string;
-    releaseDate: string;
-    reloadTime: number;
-    skipBuildTimePrice: number;
-    slot: number;
-    tags: string[];
-    totalDamage: number;
-    tradable: boolean;
-    trigger: string;
-    type: string;
     uniqueName: string;
-    wikiaThumbnail: string;
-    wikiaUrl: string;
+    description: string;
+    type?: string;
+    category?: string;
+    masteryReq?: number;
+    damage?: {
+        [key: string]: number;
+        total: number;
+    };
+    fireRate?: number;
+    criticalChance?: number;
+    criticalMultiplier?: number;
+    procChance?: number;
+    noise?: string;
+    accuracy?: number;
+    magazineSize?: number;
+    reloadTime?: number;
+    disposition?: number;
+    isPrime?: boolean;
+    wikiaThumbnail?: string;
+    isDiscardable: boolean;
+    requiredForWeapons?: string[];
 } 

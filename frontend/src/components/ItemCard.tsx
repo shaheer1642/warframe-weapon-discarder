@@ -10,21 +10,50 @@ import {
     LinearProgress,
     Divider
 } from "@mui/material";
+import DeleteIcon from '@mui/icons-material/Delete';
+import LockIcon from '@mui/icons-material/Lock';
 import { WarframeWeapon } from "../types/weapon.types";
 import { styled } from "@mui/material/styles";
 
 const StyledCard = styled(Card)(({ theme }) => ({
-    width: 350,
+    width: '100%',
     height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
     background: 'rgba(30, 30, 35, 0.95)',
     backdropFilter: 'blur(10px)',
     border: '1px solid rgba(255, 255, 255, 0.1)',
     transition: 'transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out',
+    overflow: 'hidden',
     '&:hover': {
         transform: 'translateY(-4px)',
         boxShadow: '0 4px 20px rgba(0, 0, 0, 0.4)'
     }
 }));
+
+const StyledCardContent = styled(CardContent)({
+    flexGrow: 1,
+    display: 'flex',
+    flexDirection: 'column',
+    padding: '16px',
+    overflowY: 'auto',
+    '&:last-child': {
+        paddingBottom: '16px'
+    },
+    '::-webkit-scrollbar': {
+        width: '6px',
+    },
+    '::-webkit-scrollbar-track': {
+        background: 'rgba(0, 0, 0, 0.1)',
+    },
+    '::-webkit-scrollbar-thumb': {
+        background: 'rgba(255, 255, 255, 0.2)',
+        borderRadius: '3px',
+        '&:hover': {
+            background: 'rgba(255, 255, 255, 0.3)',
+        },
+    }
+});
 
 const StatBox = styled(Box)(({ theme }) => ({
     display: 'flex',
@@ -73,15 +102,29 @@ export default function ItemCard({ item }: { item: WarframeWeapon }) {
         <StyledCard>
             <CardMedia
                 component="img"
-                height="200"
+                height="180"
                 image={item.wikiaThumbnail || ''}
                 alt={item.name}
                 sx={{ objectFit: 'contain', backgroundColor: 'rgba(0, 0, 0, 0.6)', p: 2 }}
             />
-            <CardContent>
-                <Typography variant="h5" gutterBottom sx={{ color: 'white', fontWeight: 'bold' }}>
-                    {item.name}
-                </Typography>
+            <StyledCardContent>
+                <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 1 }}>
+                    <Typography variant="h5" sx={{ color: 'white', fontWeight: 'bold', wordBreak: 'break-word', mr: 1 }}>
+                        {item.name}
+                    </Typography>
+                    <Tooltip title={item.isDiscardable ?
+                        "Safe to discard" :
+                        `Required for: ${item.requiredForWeapons?.join(', ')}`
+                    }>
+                        <Chip
+                            icon={item.isDiscardable ? <DeleteIcon /> : <LockIcon />}
+                            label={item.isDiscardable ? "Discardable" : "Required"}
+                            color={item.isDiscardable ? "success" : "error"}
+                            size="small"
+                            sx={{ flexShrink: 0 }}
+                        />
+                    </Tooltip>
+                </Box>
 
                 <Typography variant="body2" color="grey.400" sx={{ mb: 2 }}>
                     {item.description}
@@ -89,7 +132,7 @@ export default function ItemCard({ item }: { item: WarframeWeapon }) {
 
                 <Divider sx={{ my: 2, backgroundColor: 'rgba(255, 255, 255, 0.1)' }} />
 
-                <Grid container spacing={2}>
+                <Grid container spacing={2} sx={{ mt: 'auto' }}>
                     <Grid item xs={12}>
                         <StatBox>
                             <StatLabel variant="body2">Mastery Rank:</StatLabel>
@@ -147,7 +190,7 @@ export default function ItemCard({ item }: { item: WarframeWeapon }) {
                     )}
 
                     <Grid item xs={12}>
-                        <Box sx={{ display: 'flex', gap: 1, mt: 1 }}>
+                        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mt: 1 }}>
                             {item.type && (
                                 <Chip
                                     label={item.type}
@@ -172,7 +215,7 @@ export default function ItemCard({ item }: { item: WarframeWeapon }) {
                         </Box>
                     </Grid>
                 </Grid>
-            </CardContent>
+            </StyledCardContent>
         </StyledCard>
     );
 }
