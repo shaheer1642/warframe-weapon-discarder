@@ -34,10 +34,15 @@ cd warframe-weapon-discarder
 ```bash
 cd frontend
 npm install
+cd backend
+npm install
 ```
 
 3. Start the development server:
 ```bash
+cd frontend
+npm run dev
+cd backend
 npm run dev
 ```
 
